@@ -12,5 +12,14 @@
     "mongoose": "*"
   },
   "author": "sumit",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumitKLamba/node.js_learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SumitKLamba/node.js_learning/issues"
+  },
+  "homepage": "https://github.com/SumitKLamba/node.js_learning#readme"
 }

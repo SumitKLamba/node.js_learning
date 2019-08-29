@@ -4,11 +4,11 @@ var app = express();
 var mongoose = require('mongoose');
 
 //Connect to Mongose
-mongoose.connect('mongodb://localhost/bookstore',{useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/nodejs');
 var db = mongoose.connection;
 
 app.get('/',function(req, res){
-    res.send("Hello World!");
+    res.send("Please use /api/books or /api/genre");
 });
 
 app.listen(3000);
