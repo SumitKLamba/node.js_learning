@@ -4,14 +4,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 Genre = require('./models/genre');
-// arre ye galat implimentation hh!!
-// Rukk m dekhta hu
-//Connect to Mongose
+Book = require('./models/book')
+
 mongoose.connect('mongodb://localhost/bookstore',{useNewUrlParser: true});
 var db = mongoose.connection;
 
 app.get('/',function(req, res){
-    res.send("Please use /api/books or /api/genre");
+    res.send("Please use /api/books or /api/genres");
 });
 
 app.get('/api/genres',function(req, res){ 
@@ -20,6 +19,15 @@ app.get('/api/genres',function(req, res){
             throw err;
         }
         res.json(genres);
+    });
+});
+
+app.get('/api/books',function(req, res){ 
+    Book.getBooks(function(err, books){
+        if(err){
+            throw err;
+        }
+        res.json(books);
     });
 });
 
