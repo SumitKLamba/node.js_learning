@@ -7,8 +7,7 @@ var bookSchema = mongoose.Schema({
         required: true
     },
     genre:{
-      tyoe: String,
-      
+      type: String,
     },
     author:{
         type: String,
@@ -34,4 +33,8 @@ module.exports.getBooks = function(callback, limit){
 
 module.exports.getBookById = function(id, callback){
     Book.findById(id, callback);
+}
+
+module.exports.addBook = function(book, callback){
+    Genre.create(book, callback);
 }
